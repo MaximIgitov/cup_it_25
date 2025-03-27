@@ -1,0 +1,220 @@
+🚀 Starting comprehensive unfiltered EDA analysis...
+
+================================================================================
+Running: Unfiltered Data Loading and Preprocessing
+================================================================================
+Loading data from CupIT_Sber_data.csv...
+
+Dataset shape: (1091043, 8)
+
+=== MINIMAL PREPROCESSING (NO FILTERING) ===
+Converting service_amount_net from string to numeric...
+Processed data shape: (1091043, 12) (no records removed)
+
+Processed data saved to 'data/unfiltered/processed_data.csv'
+
+Preprocessing without filtering completed successfully!
+
+✅ Completed: Unfiltered Data Loading and Preprocessing in 18.69 seconds
+
+================================================================================
+Running: Unfiltered Temporal Analysis
+================================================================================
+Loading unfiltered data from data/unfiltered/processed_data.csv...
+
+=== MONTHLY PAYMENT ANALYSIS (UNFILTERED DATA) ===
+First month: 2022-01, amount: 71,851,549.00
+Last month: 2023-12, amount: 128,581,203.73
+
+Yearly Totals (UNFILTERED DATA):
+Year 2022: 1,172,651,670.84
+Year 2023: 1,375,219,466.56
+Growth 2022 to 2023: 17.27%
+
+Year-over-Year Growth by Month (UNFILTERED DATA):
+
+Debug - Raw values from pivot table (UNFILTERED DATA):
+  January: 2022=71851549.00, 2023=97223534.81
+  February: 2022=85281091.55, 2023=103426991.39
+  March: 2022=107601185.68, 2023=126526758.13
+  April: 2022=107306979.99, 2023=118556829.27
+  May: 2022=98952619.36, 2023=101145817.26
+  June: 2022=99968706.47, 2023=108438782.55
+  July: 2022=90026530.26, 2023=111552992.64
+  August: 2022=91049389.33, 2023=114085142.51
+  September: 2022=97529910.96, 2023=115062448.09
+  October: 2022=103459033.21, 2023=121831761.15
+  November: 2022=113152492.55, 2023=128787205.03
+  December: 2022=106472182.48, 2023=128581203.73
+
+Comparing 2022 to 2023 (UNFILTERED DATA):
+  January: 35.31%
+  February: 21.28%
+  March: 17.59%
+  April: 10.48%
+  May: 2.22%
+  June: 8.47%
+  July: 23.91%
+  August: 25.30%
+  September: 17.98%
+  October: 17.76%
+  November: 13.82%
+  December: 20.77%
+
+Years in pivot_data: [2022, 2023]
+
+Debug - Pivot table raw values:
+year           2022          2023
+month                            
+1      7.185155e+07  9.722353e+07
+2      8.528109e+07  1.034270e+08
+3      1.076012e+08  1.265268e+08
+4      1.073070e+08  1.185568e+08
+5      9.895262e+07  1.011458e+08
+6      9.996871e+07  1.084388e+08
+7      9.002653e+07  1.115530e+08
+8      9.104939e+07  1.140851e+08
+9      9.752991e+07  1.150624e+08
+10     1.034590e+08  1.218318e+08
+11     1.131525e+08  1.287872e+08
+12     1.064722e+08  1.285812e+08
+
+Generating Year-over-Year chart with years: [2022, 2023]
+
+Plotting for year 2022:
+  Month 1: 71.85M
+  Month 2: 85.28M
+  Month 3: 107.60M
+  Month 4: 107.31M
+  Month 5: 98.95M
+  Month 6: 99.97M
+  Month 7: 90.03M
+  Month 8: 91.05M
+  Month 9: 97.53M
+  Month 10: 103.46M
+  Month 11: 113.15M
+  Month 12: 106.47M
+
+Plotting for year 2023:
+  Month 1: 97.22M
+  Month 2: 103.43M
+  Month 3: 126.53M
+  Month 4: 118.56M
+  Month 5: 101.15M
+  Month 6: 108.44M
+  Month 7: 111.55M
+  Month 8: 114.09M
+  Month 9: 115.06M
+  Month 10: 121.83M
+  Month 11: 128.79M
+  Month 12: 128.58M
+
+Temporal analysis with unfiltered data completed successfully!
+
+✅ Completed: Unfiltered Temporal Analysis in 8.57 seconds
+
+================================================================================
+Running: Unfiltered Service Analysis
+================================================================================
+Loading processed data from data/unfiltered/processed_data.csv...
+
+=== SERVICE TYPE ANALYSIS ===
+Note: 'service_type_id' column not found, using 'service_code' as service type indicator
+
+Top 10 Service Types by Total Payment:
+                      service_code  count           sum     mean   median      std
+0xE063005CA2855E4375C051E72E257E60   9799 86,349,620.50 8,812.08 7,531.00 4,598.22
+0xA1F568EFE29F3FD9A857306913CD9AE6   6965 42,370,601.84 6,083.36 5,932.00 1,872.41
+0x05EC231290D0034ED6DABA918BE83A82  10319 42,350,590.04 4,104.14 3,864.00 1,483.36
+0xCDEA5658E0AD52E1700653CAE2A4928D  16780 38,397,511.75 2,288.29 2,104.00   844.97
+0x332E8D3220A5317B23558A5E79CE00E4  14832 36,935,333.93 2,490.25 2,440.00   842.30
+0xE8B3ECC5003B43340B17DD2C4FDD973F   8529 31,630,897.52 3,708.63 3,367.76 1,484.44
+0x0E4802D5CAE944A448D1B65E7EA93B89   3627 30,860,040.50 8,508.42 8,668.80 2,168.63
+0xB28EBFD739241377973D3F2B39AEDDF0   4961 30,800,737.63 6,208.57 5,657.63 2,498.60
+0x2C9450036B34FF56BB1491A2B0E08344   8899 29,212,225.41 3,282.64 3,168.00 1,157.40
+0x79FE3312940C5D26CC26B95B6F090B46   2727 26,844,949.07 9,844.13 9,534.40 3,001.17
+
+=== SERVICE GROWTH ANALYSIS ===
+Note: 'service_type_id' column not found, using 'service_code' as service type indicator
+
+Top 5 Growing Service Types (2022 to 2023):
+                      service_code          2022          2023  growth_rate  payment_diff
+0x0E4802D5CAE944A448D1B65E7EA93B89 11,838,008.24 19,022,032.26        60.69  7,184,024.02
+0x79FE3312940C5D26CC26B95B6F090B46 10,085,731.25 16,759,217.82        66.17  6,673,486.57
+0x41F6FE861FCC0E16226577FDBA3D46C7  1,645,096.51  7,099,348.20       331.55  5,454,251.69
+0xA1F568EFE29F3FD9A857306913CD9AE6 18,551,977.45 23,818,624.39        28.39  5,266,646.94
+0xFE02506E5DADB6647BD2B0C0F8EDB35A  6,989,385.00 11,294,852.60        61.60  4,305,467.60
+
+Top 5 Declining Service Types (2022 to 2023):
+                      service_code      2022     2023  growth_rate  payment_diff
+0xFF2ADD793C82F8780376EA535EC29C32       NaN 1,078.40          NaN           NaN
+0xFF5ECDA8235322BA739A4876E0EA213D       NaN    27.91          NaN           NaN
+0xFFADC9C487269E074E82075322FDCE6C 18,594.00      NaN          NaN           NaN
+0xFFBEDD3D5181576C5847D9A1EAEB9F0C 13,405.00      NaN          NaN           NaN
+0xFFE0242427294A9526FF94E54AC9CBE5       NaN    18.28          NaN           NaN
+
+=== AVERAGE PAYMENT ANALYSIS ===
+
+Service analysis completed successfully!
+
+✅ Completed: Unfiltered Service Analysis in 19.83 seconds
+
+================================================================================
+Running: Unfiltered Patient Analysis
+================================================================================
+Loading processed data from data/unfiltered/processed_data.csv...
+
+=== PATIENT VISIT ANALYSIS ===
+
+Patient Visit Statistics:
+Total patients: 29,701
+Average visits per patient: 36.50
+Median visits per patient: 17.00
+Max visits from a single patient: 4121
+
+=== PATIENT RETENTION ANALYSIS ===
+
+=== SERVICE MIX ANALYSIS ===
+Note: 'service_type_id' column not found, using 'service_code' as service type indicator
+
+Patient analysis completed successfully!
+
+✅ Completed: Unfiltered Patient Analysis in 20.62 seconds
+
+================================================================================
+Running: Unfiltered Forecasting Analysis
+================================================================================
+Loading monthly data from eda_results/unfiltered/data/monthly_aggregated_payments.csv...
+
+=== TIME SERIES ANALYSIS ===
+
+Performing Seasonal Decomposition...
+
+=== PAYMENT FORECASTING ===
+
+Training SARIMA model...
+
+Forecast Summary (next 6 months):
+      date  forecasted_amount
+2024-01-31     122,476,294.72
+2024-02-29     127,982,011.79
+2024-03-31     151,236,638.86
+2024-04-30     143,232,339.41
+2024-05-31     125,828,955.81
+2024-06-30     133,120,228.00
+
+=== GROWTH RATE ANALYSIS ===
+
+Year-over-Year Growth (2022 to 2023):
+Average monthly growth: 17.91%
+Median monthly growth: 17.87%
+Minimum monthly growth: 2.22%
+Maximum monthly growth: 35.31%
+Overall annual growth: 17.27%
+
+Forecasting analysis completed successfully!
+
+✅ Completed: Unfiltered Forecasting Analysis in 6.19 seconds
+
+🎉 All unfiltered analyses completed successfully!
+.venvBogodist@MacBook-Pro-Tochka CupIT_Final % 

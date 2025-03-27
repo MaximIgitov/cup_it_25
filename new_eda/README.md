@@ -1,97 +1,111 @@
-# Medical Services Payment Data Analysis - Unfiltered Approach
+# Medical Services Payment Data Analysis
 
-This repository contains scripts for comprehensive exploratory data analysis (EDA) of medical services payment data, focusing on temporal patterns, service types, patient demographics, and future payment forecasting. The analysis uses an **unfiltered** approach that preserves all data points.
+## Overview
+
+This project focuses on the analysis of medical services payment data, providing insights into payment trends, service types, patient demographics, and forecasting. The analysis is performed using an unfiltered approach that preserves all data points without removing outliers or duplicates.
 
 ## Project Structure
 
-The project is organized into the following directories:
-
 ```
+.
 ├── data/
 │   ├── raw/             # Raw data files
 │   └── unfiltered/      # Unfiltered processed data
 ├── eda_scripts/         # Analysis scripts
-├── eda_results/         # Results of the analysis
-│   ├── data/            # Generated data files
-│   ├── figures/         # Generated visualizations
-│   ├── reports/         # Analysis reports
-│   └── unfiltered/      # Unfiltered analysis results
+│   ├── eda_main.py       # Data loading and preprocessing
+│   ├── temporal_analysis.py  # Temporal analysis of payments
+│   ├── service_analysis.py   # Service type analysis
+│   ├── patient_analysis.py   # Patient demographics and behavior
+│   └── forecasting_analysis.py  # Time series forecasting
+├── eda_results/         # Results of analyses
+│   └── unfiltered/
+│       ├── data/        # Generated data files
+│       └── figures/     # Generated visualizations
+│           ├── temporal/     # Temporal analysis figures
+│           ├── service/      # Service analysis figures
+│           ├── patient/      # Patient analysis figures
+│           └── forecasting/  # Forecasting figures
 └── run_all_analysis.py  # Main script to run all analyses
 ```
 
-## Analysis Approach
-
-This repository uses an **unfiltered approach** for data analysis, meaning:
-- No data points are removed during preprocessing
-- Outliers are preserved in the analysis
-- All records are kept for the most comprehensive view of the data
-
 ## Analysis Components
 
-The analysis is divided into several components:
+The project consists of several key analysis components:
 
-1. **Basic Data Processing** (`eda_scripts/eda_main.py`)
-   - Data loading with no filtering
-   - Basic data cleaning and type conversion
-   - Initial exploratory analysis
+1. **Data Preprocessing** (`eda_main.py`)
+   - Loads raw data and performs minimal preprocessing
+   - Preserves all data points without filtering
+   - Saves processed data to `data/unfiltered/`
 
-2. **Temporal Analysis** (`eda_scripts/temporal_analysis.py`)
-   - Monthly and yearly payment trends from unfiltered data
-   - Seasonal patterns
-   - Year-over-year growth analysis
+2. **Temporal Analysis** (`temporal_analysis.py`)
+   - Analyzes monthly and yearly payment trends
+   - Calculates year-over-year growth rates
+   - Visualizes payment comparisons between years
 
-3. **Service Analysis** (`eda_scripts/service_analysis.py`)
-   - Distribution of services by type in unfiltered data
-   - Service utilization patterns
-   - Cost analysis by service type
+3. **Service Analysis** (`service_analysis.py`)
+   - Identifies top service types by payment volume
+   - Analyzes service type trends over time
+   - Calculates growth rates for different service types
+   - Examines average payment per service
 
-4. **Patient Analysis** (`eda_scripts/patient_analysis.py`)
-   - Patient visit patterns
-   - Patient retention analysis
-   - Service mix by patient demographics
+4. **Patient Analysis** (`patient_analysis.py`)
+   - Analyzes patient visit patterns
+   - Calculates patient retention rates
+   - Segments patients based on visit frequency
+   - Examines service mix by patient segment
 
-5. **Forecasting Analysis** (`eda_scripts/forecasting_analysis.py`)
-   - Time series decomposition
-   - Payment forecasting using SARIMA models
-   - Growth rate analysis and projections
+5. **Forecasting Analysis** (`forecasting_analysis.py`)
+   - Decomposes time series data to identify trends and seasonality
+   - Forecasts future payments using SARIMA models
+   - Analyzes growth rates and seasonality patterns
 
-## How to Run
+## Requirements
 
-To run the complete analysis:
+This project requires the following Python packages:
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- statsmodels
+- scipy
 
-```bash
+To install the required packages, run:
+```
+pip install -r requirements.txt
+```
+
+## Running the Analyses
+
+You can run all analyses at once using the main script:
+
+```
 python run_all_analysis.py
 ```
 
-To run individual analysis components:
+Or run each analysis script individually:
 
-```bash
-python eda_scripts/eda_main.py
-python eda_scripts/temporal_analysis.py
-python eda_scripts/service_analysis.py
-python eda_scripts/patient_analysis.py
-python eda_scripts/forecasting_analysis.py
+```
+python eda_scripts/eda_main.py              # Run data preprocessing
+python eda_scripts/temporal_analysis.py      # Run temporal analysis
+python eda_scripts/service_analysis.py       # Run service analysis
+python eda_scripts/patient_analysis.py       # Run patient analysis
+python eda_scripts/forecasting_analysis.py   # Run forecasting analysis
 ```
 
-## Forecasting Results
+## Results
 
-The forecasting analysis provides:
+Analysis results are organized into subdirectories:
 
-1. **Seasonal Decomposition**: Breaks down the time series into trend, seasonal, and residual components
-2. **Future Payment Projections**: Forecasts payment amounts for the next 6 months with confidence intervals
-3. **Growth Rate Analysis**: Detailed analysis of month-over-month and year-over-year growth rates
+- `eda_results/unfiltered/data/`: CSV files with analysis results
+- `eda_results/unfiltered/figures/`: Visualizations from each analysis:
+  - `temporal/`: Year-over-year comparisons and growth charts
+  - `service/`: Service type distributions and trends
+  - `patient/`: Patient demographics and behavior visualizations
+  - `forecasting/`: Time series decomposition and forecast charts
 
-## Generated Visualizations
+## Approach
 
-The analysis generates various visualizations, including:
-
-- Monthly payment trends
-- Year-over-year payment comparisons
-- Time series decomposition charts
-- Payment forecasts with confidence intervals
-- Growth rate analysis charts
-- Service mix distributions
-- Patient retention analysis
+This project uses an unfiltered approach that preserves all data points without removing outliers or duplicates. This approach provides a comprehensive view of the data but may be sensitive to data quality issues. The analysis scripts are designed to be modular and can be extended or modified as needed.
 
 ## Data Requirements
 
