@@ -1,0 +1,11 @@
+Dataset shape: (1091043, 8)
+
+Unique values count:
+service_document_id: 1084033
+account_document_id: 1091043
+service_date: 333415
+service_amount_net: 21308
+patient_id: 29701
+service_code: 5232
+service_name: 3027
+is_hospital: 2
