@@ -1,0 +1,28 @@
+                                      SARIMAX Results                                      
+===========================================================================================
+Dep. Variable:                  service_amount_net   No. Observations:                   21
+Model:             SARIMAX(2, 1, 1)x(0, 1, [], 12)   Log Likelihood                 -98.863
+Date:                             Sun, 30 Mar 2025   AIC                            205.725
+Time:                                     23:15:05   BIC                            204.892
+Sample:                                 01-31-2022   HQIC                           202.391
+                                      - 09-30-2023                                         
+Covariance Type:                               opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+ar.L1          0.4853      0.256      1.899      0.058      -0.016       0.986
+ar.L2         -0.8408      0.196     -4.284      0.000      -1.225      -0.456
+ma.L1          0.2513      0.107      2.357      0.018       0.042       0.460
+sigma2      1.208e+13   3.69e-15   3.27e+27      0.000    1.21e+13    1.21e+13
+===================================================================================
+Ljung-Box (L1) (Q):                   0.33   Jarque-Bera (JB):                 0.37
+Prob(Q):                              0.56   Prob(JB):                         0.83
+Heteroskedasticity (H):               1.07   Skew:                            -0.07
+Prob(H) (two-sided):                  0.97   Kurtosis:                         1.79
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+[2] Covariance matrix is singular or near-singular, with condition number 1.16e+45. Standard errors may be unstable.
+
+Model selected based on forecast performance on the last 3 months (test set).
