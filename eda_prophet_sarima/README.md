@@ -1,8 +1,8 @@
-# Medical Services Payment Data Analysis
+# Payment Data Analysis
 
 ## Overview
 
-This project focuses on the analysis of medical services payment data, providing insights into payment trends, service types, patient demographics, and forecasting. The analysis is performed using an unfiltered approach that preserves all data points without removing outliers or duplicates.
+This project focuses on the analysis of payment data, providing insights into payment trends, service types, patient demographics, and forecasting. The analysis is performed using an unfiltered approach that preserves all data points without removing outliers or duplicates.
 
 ## Project Structure
 
